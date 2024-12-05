@@ -35,7 +35,10 @@ async function uploadToHastebin(content) {
     try {
         const response = await fetch("https://hastebin.com/documents", {
             method: "POST",
-            headers: { "Content-Type": "text/plain" },
+            headers: {
+                "Content-Type": "text/plain",
+                "Authorization": "Bearer 6c519809ee19a7de2a4fc4cf86996bb03617ba8700fa4277d1e370096768d046ad6a913335fbf582f735cf12a8c288c1b8f092817f64d96d1f6f0418b9e78a4b",
+            },
             body: content,
         });
         const data = await response.json();
